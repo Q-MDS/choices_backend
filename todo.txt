@@ -1,0 +1,10 @@
+Some ideas
+
+1. Expired events are not shown
+2. OR if expired date then the expired are greyedout
+3. Scrollbar in grid - css it
+
+TODO
+1. Four menu items top right
+2. API call: get event records (current only)
+
