@@ -4,6 +4,7 @@ Some ideas
 2. OR if expired date then the expired are greyedout
 3. Scrollbar in grid - css it √
 4. Set min-width to 1366px to prevent grid going wonky √
+5. Add space between grid and scrollbar √
 
 TODO
 1. Four menu items top right √

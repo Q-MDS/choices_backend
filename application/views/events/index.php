@@ -10,7 +10,7 @@ $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' =>
 ?>
 <!-- <div style="min-width: 1366px"> -->
 <div style="font-size: 24px;">Events & Activities List: <span style="font-weight: bold"><?php echo $list_type; ?></span></div>
-<div class="grid_container" style="grid-template-columns: 90px 90px 130px 150px 100px 1fr 80px 80px 80px 60px 60px; column-gap: 15px; max-height: 660px; overflow: hidden; overflow-y: auto">
+<div class="grid_container" style="grid-template-columns: 90px 90px 130px 150px 100px 1fr 80px 80px 80px 60px 60px 1px; column-gap: 15px; max-height: 660px; overflow: hidden; overflow-y: auto">
 	<div class="title">Start Date</div>
 	<div class="title">End Date</div>
 	<div class="title">Category</div>
@@ -22,6 +22,7 @@ $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' =>
 	<div class="title">Price</div>
 	<div class="title" style="justify-content: center;">Edit</div>
 	<div class="title" style="justify-content: center;">Remove</div>
+	<div class="title">&nbsp;</div>
 
 	<!-- Filters -->
 	<div class=""><?php echo form_input('flt_start', '', 'id="flt_start" class="filter" placeholder="Start Date" onchange="EVENTS.setFilter(0, this.value);"'); ?></div>
@@ -39,6 +40,7 @@ $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' =>
 			<div class='label'>Reset</div>
 		</div>
 	</div>
+	<div class="title">&nbsp;</div>
 
 	<?php
 	foreach ($records as $row)
@@ -70,6 +72,7 @@ $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' =>
 			}
 			echo '<div id="' . $row['id'] . '" class="data" style="justify-content: center; cursor: pointer" onclick="EVENTS.getEdit(this.id)">' . img($img_edit). '</div>';
 			echo '<div id="' . $row['id'] . '" class="data" style="justify-content: center; cursor: pointer" onclick="EVENTS.deleteEvent(this.id)">' . img($img_delete). '</div>';
+			echo '<div class="data">&nbsp;</div>';
 		echo '</div>';
 	}
 	?>
