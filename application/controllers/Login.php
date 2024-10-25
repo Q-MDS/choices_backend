@@ -19,11 +19,11 @@ class Login extends CI_Controller
 
 		if ($result == 1)
 		{
-			redirect('events');
+			redirect('events/init');
 		}
 		else
 		{
-			redirect('events');
+			// redirect('events/init');
 			// redirect('login');
 		}
 	}

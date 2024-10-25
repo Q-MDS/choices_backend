@@ -24,6 +24,58 @@ const EVENTS =
 			window.location.reload(); 
 		});
 	},
+	rptThisWeek: function()
+	{
+		let formData = { };
+		
+		let phpUrl = baseUrl + "events/rpt_this_week";
+		
+		sendData(phpUrl, formData)
+		.then(result => 
+		{ 
+			console.log('Resut', result);
+			window.location.reload(); 
+		});
+	},
+	rptThisMonth: function()
+	{
+		let formData = { };
+		
+		let phpUrl = baseUrl + "events/rpt_this_month";
+		
+		sendData(phpUrl, formData)
+		.then(result => 
+		{ 
+			console.log('Resut', result);
+			window.location.reload(); 
+		});
+	},
+	rptUpcoming: function()
+	{
+		let formData = { };
+		
+		let phpUrl = baseUrl + "events/rpt_upcoming";
+		
+		sendData(phpUrl, formData)
+		.then(result => 
+		{ 
+			console.log('Resut', result);
+			window.location.reload(); 
+		});
+	},
+	rptPrevious: function()
+	{
+		let formData = { };
+		
+		let phpUrl = baseUrl + "events/rpt_previous";
+		
+		sendData(phpUrl, formData)
+		.then(result => 
+		{ 
+			console.log('Resut', result);
+			window.location.reload(); 
+		});
+	},
 	resetFilter: function()
 	{
 		console.log('Reset Filter');

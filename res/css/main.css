@@ -203,6 +203,8 @@
 .grid_container {
     display: grid;
     padding: 10px 0px 0px 0px;
+	/* scrollbar-width: thin; /* Width of the scrollbar */
+    /* scrollbar-color: #888 #f1f1f1; /* Color of the scrollbar thumb and track */
 }
 .grid_container .grid_box {
     display:grid;
@@ -245,6 +247,23 @@
     border-bottom: 1px dotted #ffffff80;
     padding: 6px 4px 6px 6px;
     margin-bottom: 0px;
+}
+/* WebKit-based browsers (Chrome, Safari) */
+.grid_container::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+.grid_container::-webkit-scrollbar-track {
+    background: var(--app-primary); /* Background of the scrollbar track */
+}
+
+.grid_container::-webkit-scrollbar-thumb {
+    background: #fff; /* Color of the scrollbar thumb */
+    border-radius: 0px; /* Rounded corners for the scrollbar thumb */
+}
+
+.grid_container::-webkit-scrollbar-thumb:hover {
+    background: #ffffff80; /* Color of the scrollbar thumb on hover */
 }
 .data_row {
     display: contents;

@@ -27,6 +27,11 @@ function hideFormOverlay()
     viewOverlay.innerHTML = '';
 }
 
+function logout()
+{
+    window.location.assign(baseUrl + "login/logout");
+}
+
 async function sendData(phpUrl, formData) 
 {
     const response = await fetch(phpUrl, { method: "POST", body: JSON.stringify(formData), headers: {"Content-type": "application/json; charset=UTF-8"} });

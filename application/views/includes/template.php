@@ -39,8 +39,8 @@
 <body>
 	<!-- Main content
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
-	<div class="app_container">
-		<div style="width: 100%; height: 145px"><?php $this->load->view($topbar); ?></div>
+	<div class="app_container" style="min-width: 1366px">
+		<div style="width: 100%; height: 145px; margin-bottom: 10px"><?php $this->load->view($topbar); ?></div>
 		<div style="flex:1; width: 100%; background-color: var(--app-secondary); border-radius: 30px; z-index: 10">
 			<div style="padding: 30px;">
 			<?php $this->load->view($main_content); ?>

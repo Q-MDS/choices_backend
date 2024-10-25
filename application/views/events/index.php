@@ -8,6 +8,8 @@ $dd_event_area = array(0 => 'Select...', 'Klang Valley' => 'Klang Valley', 'Pena
 $dd_event_time = array(0 => 'Select...', 'Morning' => 'Morning', 'Afternoon' => 'Afternoon', 'Evening' => 'Evening', 'Night' => 'Night');
 $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online');
 ?>
+<!-- <div style="min-width: 1366px"> -->
+<div style="font-size: 24px;">Events & Activities List: <span style="font-weight: bold"><?php echo $list_type; ?></span></div>
 <div class="grid_container" style="grid-template-columns: 90px 90px 130px 150px 100px 1fr 80px 80px 80px 60px 60px; column-gap: 15px; max-height: 660px; overflow: hidden; overflow-y: auto">
 	<div class="title">Start Date</div>
 	<div class="title">End Date</div>
@@ -73,6 +75,7 @@ $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' =>
 	?>
 	<!-- <div style="position: absolute; bottom: 30px;">Dah line</div> -->
 </div>
+<!-- </div> -->
 <script>
 	let isLitepickerChange = false;
 

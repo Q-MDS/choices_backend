@@ -96,6 +96,119 @@ class Events extends CI_Controller
 			$where_clause = 'WHERE ' . implode(' AND ', $where);
 		}
 
+		$this->session->set_userdata('list_type', '[Filtered]');
+        $this->session->set_userdata('event_where', $where_clause);
+        $this->session->set_userdata('event_params', $params);
+        $this->session->set_userdata('event_filters', $event_filters);
+	}
+
+	public function rpt_this_week()
+	{
+		// Get timestamp of beginning of week
+		$beginning_of_week = strtotime('last monday', strtotime('tomorrow'));
+		$end_of_week = strtotime('next sunday', $beginning_of_week);
+
+		$event_filters = array('', '', '0', '', '0', '', '0', '0', '0');
+
+		$where = array();
+		$params = array();
+
+		$where[] = 'event_start_date >= ?';
+		$params[] = $beginning_of_week;
+		
+		$where[] = 'event_end_date <= ?';
+		$params[] = $end_of_week;
+
+		$where_clause = '';
+		
+		if (count($where) > 0)
+		{
+			$where_clause = 'WHERE ' . implode(' AND ', $where);
+		}
+
+		$this->session->set_userdata('list_type', '[This Week]');
+        $this->session->set_userdata('event_where', $where_clause);
+        $this->session->set_userdata('event_params', $params);
+        $this->session->set_userdata('event_filters', $event_filters);
+	}
+
+	public function rpt_this_month()
+	{
+		// Get timestamp of beginning of current month and last day of current month
+		$beginning_of_month = strtotime('first day of this month');
+		$end_of_month = strtotime('last day of this month');
+
+		$event_filters = array('', '', '0', '', '0', '', '0', '0', '0');
+
+		$where = array();
+		$params = array();
+
+		$where[] = 'event_start_date >= ?';
+		$params[] = $beginning_of_month;
+		
+		$where[] = 'event_end_date <= ?';
+		$params[] = $end_of_month;
+
+		$where_clause = '';
+		
+		if (count($where) > 0)
+		{
+			$where_clause = 'WHERE ' . implode(' AND ', $where);
+		}
+
+		$this->session->set_userdata('list_type', '[This Month]');
+        $this->session->set_userdata('event_where', $where_clause);
+        $this->session->set_userdata('event_params', $params);
+        $this->session->set_userdata('event_filters', $event_filters);
+	}
+
+	public function rpt_upcoming()
+	{
+		// Get upcoming events
+		$today = strtotime('today');
+
+		$event_filters = array('', '', '0', '', '0', '', '0', '0', '0');
+
+		$where = array();
+		$params = array();
+
+		$where[] = 'event_start_date > ?';
+		$params[] = $today;
+
+		$where_clause = '';
+		
+		if (count($where) > 0)
+		{
+			$where_clause = 'WHERE ' . implode(' AND ', $where);
+		}
+
+		$this->session->set_userdata('list_type', '[Upcoming]');
+        $this->session->set_userdata('event_where', $where_clause);
+        $this->session->set_userdata('event_params', $params);
+        $this->session->set_userdata('event_filters', $event_filters);
+	}
+
+	public function rpt_previous()
+	{
+		// Get upcoming events
+		$today = strtotime('today');
+
+		$event_filters = array('', '', '0', '', '0', '', '0', '0', '0');
+
+		$where = array();
+		$params = array();
+
+		$where[] = 'event_start_date < ?';
+		$params[] = $today;
+
+		$where_clause = '';
+		
+		if (count($where) > 0)
+		{
+			$where_clause = 'WHERE ' . implode(' AND ', $where);
+		}
+
+		$this->session->set_userdata('list_type', '[Previous]');
         $this->session->set_userdata('event_where', $where_clause);
         $this->session->set_userdata('event_params', $params);
         $this->session->set_userdata('event_filters', $event_filters);
@@ -106,15 +219,24 @@ class Events extends CI_Controller
 		$params = array();
 		$event_filters = array('', '', '0', '', '0', '', '0', '0', '0');
 
+		$this->session->set_userdata('list_type', '[All]');
 		$this->session->set_userdata('event_where', '');
 		$this->session->set_userdata('event_params', $params);
 		$this->session->set_userdata('event_filters', $event_filters);
+	}
+
+	public function init()
+	{
+		$this->reset_filter();
+
+		redirect('events');
 	}
 
 	public function index()
 	{
 		$data =array();
 
+		$list_type = $this->session->userdata('list_type');
 		$where_clause = $this->session->userdata('event_where');
         $params = $this->session->userdata('event_params');
 		$event_filters = $this->session->userdata('event_filters');
@@ -129,6 +251,7 @@ class Events extends CI_Controller
 		$data['main_content'] = 'events/index';
 		$data['records'] = $records;
 		$data['event_filters'] = $event_filters;
+		$data['list_type']	= $list_type;
 
 		$this->load->view('includes/template', $data);
 	}
