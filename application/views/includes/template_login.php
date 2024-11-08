@@ -22,26 +22,61 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>res/css/skeleton.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>res/css/normalize.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>res/css/modal_flat.css"/>
+	<link rel="stylesheet" href="<?php echo base_url(); ?>res/css/litepicker.css"/>
     <link rel="stylesheet" href="<?php echo base_url(); ?>res/css/main.css">
 
     <!-- Scripts
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <script type="text/javascript" src="<?php echo base_url(); ?>res/js/daypilot-modal-3.15.1.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>res/js/litepicker.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>res/js/main.js"></script>
 
     <!-- Favicon
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>res/images/favicon.png">
-
 </head>
 
 <body>
-	<div class="app_container">
-		<div style="display: flex; flex-direction: row; align-items: center; justify-content: center; height: 100%">
-			<div class="form_container">
-				<?php $this->load->view($main_content); ?>
-			</div>
+	<!-- Main content
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div class="app_container" style="min-width: 1366px">
+		<div style="display: flex; flex-direction: 'row'; justify-content: center; align-items: center;">
+			<?php $this->load->view($main_content); ?>
 		</div>
 	</div>
+	<!-- END: Main content -->
+
+	<!-- Form overlay
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div id="form_overlay"></div>
+	<!-- END: Form overlay -->
+	
+	<!-- Background tiles
+	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	<div style="position: fixed; top: -10px; left: 210px; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_1.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; top: -20px; left: 60%; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_2.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; top: 0px; right: -40px; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_3.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; bottom: 0px; right: -40px; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_4.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; bottom: 0px; right: 20%; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_5.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; bottom: 0px; left: 20%; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_6.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; bottom: 0px; left: 0; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_7.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<div style="position: fixed; top: 25%; left: 0; pointer-events: none;">
+	<?php $img = array('src' => 'res/images/tile_8.svg', 'style' => 'display: block;' ); echo img($img); ?>
+	</div>
+	<!-- END: Background tiles -->
 </body>
 </html>

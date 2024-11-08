@@ -41,7 +41,7 @@
 	–––––––––––––––––––––––––––––––––––––––––––––––––– -->
 	<div class="app_container" style="min-width: 1366px">
 		<div style="width: 100%; height: 145px; margin-bottom: 10px"><?php $this->load->view($topbar); ?></div>
-		<div style="flex:1; width: 100%; background-color: var(--app-secondary); border-radius: 30px; z-index: 10">
+		<div style="flex:1; width: 100%; background-color: var(--app-secondary); border-radius: 30px; z-index: 10;  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);">
 			<div style="padding: 30px;">
 			<?php $this->load->view($main_content); ?>
 			</div>
