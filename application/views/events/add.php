@@ -1,11 +1,11 @@
 <?php 
 $img_save = array('src' => 'res/images/icon_save.svg?v=1', 'style' => 'display: block;' );
 $img_close = array('src' => 'res/images/icon_close.svg?v=1', 'style' => 'display: block;' );
-$dd_event_price = array(0 => 'Select...', 'Free' => 'Free', 'Paid' => 'Paid');
-$dd_event_category = array(0 => 'Select...', 'Music' => 'Music', 'Art' => 'Art', 'Dance' => 'Dance', 'Theatre' => 'Theatre', 'Sports' => 'Sports', 'Food' => 'Food', 'Other' => 'Other');
-$dd_event_area = array(0 => 'Select...', 'Klang Valley' => 'Klang Valley', 'Penang' => 'Penang', 'Johor' => 'Johor', 'Sabah' => 'Sabah', 'Sarawak' => 'Sarawak', 'Perak' => 'Perak', 'Kedah' =>'Kedah');
-$dd_event_time = array(0 => 'Select...', 'Morning' => 'Morning', 'Afternoon' => 'Afternoon', 'Evening' => 'Evening', 'Night' => 'Night');
-$dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online');
+// $dd_event_price = array(0 => 'Select...', 'Free' => 'Free', 'Paid' => 'Paid');
+// $dd_event_category = array(0 => 'Select...', 'Music' => 'Music', 'Art' => 'Art', 'Dance' => 'Dance', 'Theatre' => 'Theatre', 'Sports' => 'Sports', 'Food' => 'Food', 'Other' => 'Other');
+// $dd_event_area = array(0 => 'Select...', 'Klang Valley' => 'Klang Valley', 'Penang' => 'Penang', 'Johor' => 'Johor', 'Sabah' => 'Sabah', 'Sarawak' => 'Sarawak', 'Perak' => 'Perak', 'Kedah' =>'Kedah');
+// $dd_event_time = array(0 => 'Select...', 'Morning' => 'Morning', 'Afternoon' => 'Afternoon', 'Evening' => 'Evening', 'Night' => 'Night');
+// $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online');
 ?>
 <div class="form_container" style="position: relative;">
     

@@ -2,12 +2,8 @@
 $img_reset = array('src' => 'res/images/icon_reset.svg?v=1', 'style' => 'display: block;' );
 $img_edit = array('src' => 'res/images/icon_edit.svg?v=1', 'style' => 'display: block;' );
 $img_delete = array('src' => 'res/images/icon_delete.svg?v=1', 'style' => 'display: block;' );
-$dd_event_category = array(0 => 'Select...', 'Music' => 'Music', 'Art' => 'Art', 'Dance' => 'Dance', 'Theatre' => 'Theatre', 'Sports' => 'Sports', 'Food' => 'Food', 'Other' => 'Other');
-$dd_event_price = array(0 => 'Select...', 'Free' => 'Free', 'Paid' => 'Paid');
-$dd_event_area = array(0 => 'Select...', 'Klang Valley' => 'Klang Valley', 'Penang' => 'Penang', 'Johor' => 'Johor', 'Sabah' => 'Sabah', 'Sarawak' => 'Sarawak', 'Perak' => 'Perak', 'Kedah' =>'Kedah');
-$dd_event_time = array(0 => 'Select...', 'Morning' => 'Morning', 'Afternoon' => 'Afternoon', 'Evening' => 'Evening', 'Night' => 'Night');
-$dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online');
 ?>
+
 <!-- <div style="min-width: 1366px"> -->
 <div style="font-size: 24px;">Events & Activities List: <span style="font-weight: bold"><?php echo $list_type; ?></span></div>
 <div class="grid_container" style="grid-template-columns: 90px 90px 130px 150px 100px 1fr 80px 80px 80px 60px 60px 1px; column-gap: 15px; max-height: 660px; overflow: hidden; overflow-y: auto">
@@ -16,8 +12,8 @@ $dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' =>
 	<div class="title">Category</div>
 	<div class="title">Name</div>
 	<div class="title">Area</div>
-	<div class="title">Location</div>
 	<div class="title">Address</div>
+	<div class="title">Type</div>
 	<div class="title">Time</div>
 	<div class="title">Price</div>
 	<div class="title" style="justify-content: center;">Edit</div>

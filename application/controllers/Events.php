@@ -3,6 +3,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Events extends CI_Controller 
 {
+	private $dd_event_category;
+	private $dd_event_area;
+	private $dd_event_price;
+	private $dd_event_time;
+	private $dd_event_type;
+	
 	public function __construct()
     {
         parent::__construct();
@@ -11,6 +17,12 @@ class Events extends CI_Controller
 		{
 			redirect('login');
 		}
+
+		$this->dd_event_category = array(0 => 'Select...', 'Community Support' => 'Community Support', 'Educational' => 'Educational', 'Festivals' => 'Festivals', 'Fundraising' => 'Fundraising', 'Live Performance' => 'Live Performance', 'Health' => 'Health', 'Pride Events' => 'Pride Events', 'Sports' => 'Sports');
+		$this->dd_event_area = array(0 => 'Select...', 'Amsterdam' => 'Amsterdam', 'Drenthe' => 'Drenthe', 'Flevoland' => 'Flevoland', 'Friesland' => 'Friesland', 'Gelderland' => 'Gelderland', 'Groningen' =>'Groningen', 'Limburg' => 'Limburg', 'Noord-Brabant' => 'Noord-Brabant', 'Noord-Holland' => 'Noord-Holland', 'Overijssel' => 'Overijssel', 'Zuid-Holland' => 'Zuid-Holland', 'Utrecht' => 'Utrecht', 'Zeeland' => 'Zeeland',);
+		$this->dd_event_price = array(0 => 'Select...', 'Free' => 'Free', 'Paid' => 'Paid');
+		$this->dd_event_time = array(0 => 'Select...', 'Morning' => 'Morning', 'Afternoon' => 'Afternoon', 'Evening' => 'Evening', 'Night' => 'Night', 'Whole Day' => 'Whole Day');
+		$this->dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online');
 
         $this->load->model('events_model');
     }
@@ -252,6 +264,11 @@ class Events extends CI_Controller
 		$data['records'] = $records;
 		$data['event_filters'] = $event_filters;
 		$data['list_type']	= $list_type;
+		$data['dd_event_category'] = $this->dd_event_category;
+		$data['dd_event_area'] = $this->dd_event_area;
+		$data['dd_event_price'] = $this->dd_event_price;
+		$data['dd_event_time'] = $this->dd_event_time;
+		$data['dd_event_type'] = $this->dd_event_type;
 
 		$this->load->view('includes/template', $data);
 	}
@@ -259,6 +276,12 @@ class Events extends CI_Controller
 	public function add()
     {
         $data = array();
+
+		$data['dd_event_category'] = $this->dd_event_category;
+		$data['dd_event_area'] = $this->dd_event_area;
+		$data['dd_event_price'] = $this->dd_event_price;
+		$data['dd_event_time'] = $this->dd_event_time;
+		$data['dd_event_type'] = $this->dd_event_type;
 
         echo $this->load->view('events/add', $data, TRUE);
     }
@@ -297,6 +320,12 @@ class Events extends CI_Controller
         $json_data = json_decode($ajax_data);
 
         $event_id = $json_data->event_id;
+
+		$data['dd_event_category'] = $this->dd_event_category;
+		$data['dd_event_area'] = $this->dd_event_area;
+		$data['dd_event_price'] = $this->dd_event_price;
+		$data['dd_event_time'] = $this->dd_event_time;
+		$data['dd_event_type'] = $this->dd_event_type;
 
 		$data['record'] = $this->events_model->get_event($event_id);
 
