@@ -117,7 +117,7 @@ $img_close = array('src' => 'res/images/icon_close.svg?v=1', 'style' => 'display
 		</div>
 		<div style="grid-column: span 2">
 			<div class="input_wrapper">
-				<div class="label">Location</div>
+				<div class="label">Address</div>
 				<div>
 					<?php
 					echo form_input('evt_location', $record['event_location'], 'id="evt_location" class="editview" placeholder="Enter location" onclick="EVENTS.validateClear(this.id);"');

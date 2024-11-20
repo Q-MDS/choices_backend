@@ -10,3 +10,4 @@ TODO
 1. Four menu items top right √
 2. API call: get event records (current only and active = 1) √
 
+home/choicesc/
