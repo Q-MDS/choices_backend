@@ -6,7 +6,7 @@ $img_delete = array('src' => 'res/images/icon_delete.svg?v=1', 'style' => 'displ
 
 <!-- <div style="min-width: 1366px"> -->
 <div style="font-size: 24px;">Events & Activities List: <span style="font-weight: bold"><?php echo $list_type; ?></span></div>
-<div class="grid_container" style="grid-template-columns: 90px 90px 130px 150px 100px 1fr 80px 80px 80px 60px 60px 1px; column-gap: 15px; max-height: 660px; overflow: hidden; overflow-y: auto">
+<div class="grid_container" style="grid-template-columns: 90px 90px 130px auto 100px auto 80px auto auto 60px 60px 1px; column-gap: 15px; max-height: 660px; overflow: hidden; overflow-y: auto">
 	<div class="title">Start Date</div>
 	<div class="title">End Date</div>
 	<div class="title">Category</div>

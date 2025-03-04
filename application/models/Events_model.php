@@ -83,6 +83,7 @@ class Events_model extends CI_Model
 
 	public function deleteEvent($event_id)
 	{
+		echo "Boo: " . $event_id;
 		$this->db->query("UPDATE events SET active = ? WHERE id = ?", array(0, $event_id));
 
 		return $this->db->affected_rows();

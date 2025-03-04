@@ -354,7 +354,7 @@ const EVENTS =
 				sendData(phpUrl, formData)
 				.then(result => 
 				{ 
-					console.log('Resut', result);	
+					// console.log('Resut', result);	
 					window.location.reload(); 
 				});
             }

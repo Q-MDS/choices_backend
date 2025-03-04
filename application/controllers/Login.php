@@ -24,7 +24,7 @@ class Login extends CI_Controller
 		else
 		{
 			// redirect('events/init');
-			// redirect('login');
+			redirect('login');
 		}
 	}
 

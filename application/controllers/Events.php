@@ -22,7 +22,7 @@ class Events extends CI_Controller
 		$this->dd_event_area = array(0 => 'Select...', 'Amsterdam' => 'Amsterdam', 'Drenthe' => 'Drenthe', 'Flevoland' => 'Flevoland', 'Friesland' => 'Friesland', 'Gelderland' => 'Gelderland', 'Groningen' =>'Groningen', 'Limburg' => 'Limburg', 'Noord-Brabant' => 'Noord-Brabant', 'Noord-Holland' => 'Noord-Holland', 'Overijssel' => 'Overijssel', 'Zuid-Holland' => 'Zuid-Holland', 'Utrecht' => 'Utrecht', 'Zeeland' => 'Zeeland',);
 		$this->dd_event_price = array(0 => 'Select...', 'Free' => 'Free', 'Paid' => 'Paid');
 		$this->dd_event_time = array(0 => 'Select...', 'Morning' => 'Morning', 'Morning and afternoon' => 'Morning and afternoon', 'Afternoon' => 'Afternoon', 'Afternoon and evening' => 'Afternoon and evening', 'Evening' => 'Evening', 'Whole Day' => 'Whole Day');
-		$this->dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online');
+		$this->dd_event_type = array(0 => 'Select...', 'In-person' => 'In-person', 'Online' => 'Online', 'Borrel' => 'Borrel');
 
         $this->load->model('events_model');
     }
@@ -47,6 +47,8 @@ class Events extends CI_Controller
 
 		$event_filters = array($flt_start, $flt_end, $flt_category, $flt_name, $flt_area, $flt_address, $flt_type, $flt_time, $flt_free_paid);
 		
+		$where[] = 'active = 1';
+
 		if ($flt_start != '')
 		{
 			$where[] = 'event_start_date = ?';
@@ -232,7 +234,7 @@ class Events extends CI_Controller
 		$event_filters = array('', '', '0', '', '0', '', '0', '0', '0');
 
 		$this->session->set_userdata('list_type', '[All]');
-		$this->session->set_userdata('event_where', '');
+		$this->session->set_userdata('event_where', 'where active = 1');
 		$this->session->set_userdata('event_params', $params);
 		$this->session->set_userdata('event_filters', $event_filters);
 	}

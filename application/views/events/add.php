@@ -132,7 +132,7 @@ $img_close = array('src' => 'res/images/icon_close.svg?v=1', 'style' => 'display
 				<div class="label">Website address</div>
 				<div>
 					<?php
-					echo form_input('evt_website', '', 'id="evt_website" class="filter" placeholder="Enter website address" onclick="EVENTS.validateClear(this.id);"');
+					echo form_input('evt_website', '', 'id="evt_website" class="editview" placeholder="Enter website address" onclick="EVENTS.validateClear(this.id);"');
 					?>
 				</div>
 				<div id="evt_website_error" class="error_message" style="position: absolute; display: none; top: 47%; right: 0px"></div>
